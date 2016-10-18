@@ -135,6 +135,7 @@
         "script/user-envs.sh",
         "script/idi-packages.sh",
         "script/browser-config.sh",
+        "script/GPII-2075.sh",
         "script/cleanup.sh"
       ],
       "type": "shell"
