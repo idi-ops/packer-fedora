@@ -21,7 +21,7 @@ SSH_PASSWORD ?= vagrant
 INSTALL_VAGRANT_KEY ?= true
 ISO_PATH ?= iso
 ifeq ($(CM),nocm)
-	BOX_SUFFIX := -$(CM)-$(BOX_VERSION).box
+	BOX_SUFFIX := .box
 else
 	BOX_SUFFIX := -$(CM)$(CM_VERSION)-$(BOX_VERSION).box
 endif
