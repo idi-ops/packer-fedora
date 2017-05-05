@@ -14,14 +14,14 @@ ifndef CM_VERSION
 		CM_VERSION = latest
 	endif
 endif
-BOX_VERSION ?= $(shell cat VERSION)
+BOX_VERSION ?= $(shell date +%Y%m%d)
 DISK_SIZE ?= 10140
 SSH_USERNAME ?= vagrant
 SSH_PASSWORD ?= vagrant
 INSTALL_VAGRANT_KEY ?= true
 ISO_PATH ?= iso
 ifeq ($(CM),nocm)
-	BOX_SUFFIX := .box
+	BOX_SUFFIX := -v$(BOX_VERSION).box
 else
 	BOX_SUFFIX := -$(CM)$(CM_VERSION)-$(BOX_VERSION).box
 endif

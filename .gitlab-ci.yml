@@ -3,25 +3,21 @@ stages:
   - build
 
 before_script:
-  - "ln -s $CACHEDIR packer_cache"
+  - "mkdir -p $TMPDIR"
+  - "ln -s $HOME/packer_cache packer_cache"
   - "git submodule sync --recursive"
   - "git submodule update --init --recursive"
 
 variables:
-  TMPDIR: "/datos/gitlab-ci/tmp"
-  CACHEDIR: "/datos/gitlab-ci/packer_cache"
+  TMPDIR: "$CI_PROJECT_DIR/../tmp"
 
-prepare_job:
-  stage: prepare
+build_fedora_x64_job:
+  stage: build_x64
   script:
-    - "mkdir -p $TMPDIR"
-    - "mkdir -p $CACHEDIR"
-
-build_job:
-  stage: build
-  script:
-    - "PACKER=/usr/local/bin/packer make test-virtualbox/fedora24"
-  artifacts:
-    paths:
-      - 'box/virtualbox/*.box'
+    - "make test-virtualbox/fedora25"
+    - "bash tests/test.sh"
+    - "mv box/virtualbox/*.box $HOME/boxes/"
+  tags:
+    - box_build
+  allow_failure: true
 
