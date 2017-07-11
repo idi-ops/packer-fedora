@@ -8,9 +8,8 @@ using Packer.
 
 ## Current Boxes
 
+* [Fedora 26 (64-bit)](https://atlas.hashicorp.com/inclusivedesign/boxes/fedora26)
 * [Fedora 24 (64-bit)](https://atlas.hashicorp.com/inclusivedesign/boxes/fedora24)
-* [Fedora 23 (64-bit)](https://atlas.hashicorp.com/inclusivedesign/boxes/fedora23)
-* [Fedora 22 (64-bit)](https://atlas.hashicorp.com/inclusivedesign/boxes/fedora22)
 
 ## Building the Vagrant Boxes
 
@@ -25,13 +24,13 @@ A GNU Make `Makefile` drives the process via the following targets:
     
 For IDI boxes the following target should be used:
 
-    make virtualbox/fedora24
+    make virtualbox/fedora26
 
 ## Troubleshoot Build Issues
 
 Part of the build process involves operating system installation. In this phase Packer is unable to retrieve logs from the installation tools being used by the operating system; if an error occurs here then the build will fail without meaningful errors. At this point a virtual display can be used to monitor the installation:
 
-    HEADLESS=true make virtualbox/fedora24
+    HEADLESS=true make virtualbox/fedora26
     
 ### Create a New Release
 
@@ -90,9 +89,3 @@ The variable `ISO_PATH` can be used to set the path to a directory with
 OS install images.  This override is commonly used to speed up Packer
 builds by pointing at pre-downloaded ISOs instead of using the default
 download Internet URLs.
-
-### Acknowledgments
-
-[SmartyStreets](http://www.smartystreets.com) is providing basebox hosting for the box-cutter project.
-
-![Powered By SmartyStreets](https://smartystreets.com/resources/images/smartystreets-flat.png)
