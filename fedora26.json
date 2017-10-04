@@ -161,6 +161,6 @@
     "ssh_password": "vagrant",
     "ssh_username": "vagrant",
     "update": "true",
-    "version": "0.1.0"
+    "version": "20171004"
   }
 }
