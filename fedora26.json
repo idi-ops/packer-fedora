@@ -42,6 +42,7 @@
         "{{ user `iso_url` }}"
       ],
       "shutdown_command": "echo 'vagrant'|sudo -S shutdown -h now",
+      "post_shutdown_delay": "120s",
       "ssh_password": "vagrant",
       "ssh_username": "vagrant",
       "ssh_wait_timeout": "10000s",
@@ -139,7 +140,8 @@
         "script/GPII-2075.sh",
         "script/cleanup.sh"
       ],
-      "type": "shell"
+      "type": "shell",
+      "expect_disconnect": "true"
     }
   ],
   "variables": {
@@ -161,6 +163,6 @@
     "ssh_password": "vagrant",
     "ssh_username": "vagrant",
     "update": "true",
-    "version": "20171004"
+    "version": "20171019"
   }
 }

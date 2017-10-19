@@ -5,6 +5,7 @@ if [[ $UPDATE  =~ true || $UPDATE =~ 1 || $UPDATE =~ yes ]]; then
 
     # reboot
     echo "Rebooting the machine..."
-    reboot
-    sleep 60
+    systemctl stop sshd.service
+    nohup shutdown -r now < /dev/null > /dev/null 2>&1 &
+    exit 0
 fi

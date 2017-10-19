@@ -1,5 +1,10 @@
 # Changelog
 
+## 20171019
+
+* Add fix for new behavior from Packer regarding reboots
+* Fix debug mode
+
 ## 1.0.14 (2015-05-31)
 
 * Add templates for Fedora 22

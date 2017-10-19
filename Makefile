@@ -34,7 +34,7 @@ ifdef CM_VERSION
 endif
 PACKER_VARS := $(addprefix -var , $(PACKER_VARS_LIST))
 ifdef PACKER_DEBUG
-	PACKER_CMD := PACKER_LOG=1 $(PACKER) --debug
+	PACKER_CMD := PACKER_LOG=1 $(PACKER)
 else
 	PACKER_CMD := $(PACKER)
 endif
