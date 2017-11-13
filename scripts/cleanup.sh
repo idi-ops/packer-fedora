@@ -1,7 +1,7 @@
 #!/bin/bash -eux
 
-echo "==> Cleaning up ${PKG_MGR} cache of metadata and packages to save space"
-${PKG_MGR} -y clean all
+echo "==> Cleaning up dnf cache of metadata and packages to save space"
+dnf -y clean all
 
 echo "==> Fixing the vagrant user permissions"
 chown vagrant:vagrant /home/vagrant -R
